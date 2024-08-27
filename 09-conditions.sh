@@ -4,6 +4,7 @@
 # Author :: Yeswanth
 # Team :: DevOps
 
+# need to pass the value as argument while running the script
 
 NUMBER=$1
 

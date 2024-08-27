@@ -13,5 +13,5 @@ echo "current user home directory: $HOME"
 echo "PID of the script $0: $$"
 sleep 100 &     # & --> to run a command in background
 echo "PID of the last background command: $!"
-ls -l       # exit status:: 0 --> success ; 1 to 127 --> error/failed
+ls -l       # exit status:: 0 --> success ; 1 to 127 --> failed
 echo "status of previous command: $?"
