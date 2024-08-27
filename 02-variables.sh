@@ -4,7 +4,7 @@
 # Author :: Yeswanth
 # Team :: DevOps
 
-PERSON1=Carlo
+PERSON1=Carlo   # no spcae between variable name, = and value
 PERSON2=Pep
 
 # variable can be called in 2 ways --> $variable_name or ${variable_name}
