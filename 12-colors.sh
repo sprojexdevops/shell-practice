@@ -30,11 +30,11 @@ VALIDATE(){                 # function to validate the installation
 INSTALL(){                      # function to install the given package if not installed already
     if [ $1 -ne 0 ]
     then
-        echo -e "$2 is $Y not installed $N..... proceeding to install it"
+        echo -e "$2 is $B not installed $N..... proceeding to install it"
         dnf install $2 -y
         VALIDATE $? "$2 installation"    
     else
-        echo -e "$2 is $B already installed $N....... nothing to do"
+        echo -e "$2 is $Y already installed $N....... nothing to do"
     fi
 }
 
