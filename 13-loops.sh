@@ -45,7 +45,7 @@ then
     exit 1
 fi
 
-# example: sudo sh 13-loops.sh git nginx mysql postfix
+# example: sudo sh <script-file> git nginx mysql postfix
 
 for package in $@       # refers to all arguments passed to the script
 do
