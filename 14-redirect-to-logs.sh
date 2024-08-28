@@ -59,7 +59,7 @@ then
 fi
 
 
-if [ $USERID -ne 0]
+if [ $USERID -ne 0 ]
 then
     echo -e "$R please run the script with root privileges $N" | tee -a $LOG_FILE
     exit 1
