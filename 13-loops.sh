@@ -47,7 +47,7 @@ fi
 
 # example: sudo sh 13-loops.sh git nginx mysql postfix
 
-for package in $@
+for package in $@       # refers to all arguments passed to the script
 do
     dnf list installed $package
     INSTALL $? $package
