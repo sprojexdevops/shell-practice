@@ -45,7 +45,7 @@ then
     exit 1
 fi
 
-# sudo sh 13-loops.sh git nginx mysql postfix
+# example: sudo sh 13-loops.sh git nginx mysql postfix
 
 for package in $@
 do
