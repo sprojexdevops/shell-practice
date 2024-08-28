@@ -53,7 +53,7 @@ INSTALL(){                      # function to install the given package if not i
 
 echo "$0 started executing at: $(date)" | tee -a $LOG_FILE
 
-if [ $# -eq 0]
+if [ $# -eq 0 ]
 then
     USAGE
 fi
