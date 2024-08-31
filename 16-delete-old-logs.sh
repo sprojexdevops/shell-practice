@@ -6,7 +6,7 @@ G="\e[32m"
 N="\e[0m"
 Y="\e[33m"
 
-if [ -d $SOURCE_DIR ]
+if [ -d $SOURCE_DIR ]       # '-d <directory-path/variable>' to check if dir exists; '! -d <directory-path/variable>' to check if dir does not exist
 then
     echo -e "$SOURCE_DIR $G Exists $N"
 else
@@ -22,4 +22,4 @@ while IFS= read -r file #IFS,internal field seperatpor, empty it will ignore whi
 do
     echo "Deleting file: $file"
     rm -rf $file
-done <<< $FILES
+done <<< $FILES 
