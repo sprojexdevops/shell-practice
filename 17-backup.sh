@@ -35,16 +35,16 @@ FILES=$(find ${SOURCE_DIR} -name "*.log" -mtime +${DAYS})
 
 echo "Files: $FILES"
 
-if [ ! -z $FILES ] # '-z <files>' empty, '! -z <files>' not empty
+if [ ! -z $FILES ] # z <files>' empty, ! z <files> not empty
 then
-    echo "$(echo "$FILES" | wc -l) files are older than ${DAYS}"
+    echo "$(echo "$FILES" | wc -l) files are older than ${DAYS} days"
     ZIP_FILE="$DEST_DIR/app-logs-$TIMESTAMP.zip"
     find ${SOURCE_DIR} -name "*.log" -mtime +${DAYS} | zip "$ZIP_FILE" -@    # @ to zip all files found as input to zip
 
     #check if zip file is successfully created or not
     if [ -f $ZIP_FILE ]
     then
-        echo "Successfully zippped files older than $DAYS"
+        echo "Successfully zippped files older than $DAYS days"
         #remove the files after zipping
         while IFS= read -r file #IFS,internal field seperatpor, empty it will ignore while space.-r is for not to ingore special charecters like /
         do
@@ -56,5 +56,5 @@ then
         exit 1
     fi
 else
-    echo "No files older than $DAYS"
+    echo "No files older than $DAYS days"
 fi
