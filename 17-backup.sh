@@ -38,7 +38,7 @@ echo "Files: $FILES"
 if [ ! -z $FILES ] # z <files>' empty, ! z <files> not empty
 then
     file_count=$(echo "$FILES" | wc -l)
-    echo " $file_count files are older than ${DAYS} days""
+    echo "$file_count files are older than ${DAYS} days"
     ZIP_FILE="$DEST_DIR/app-logs-$TIMESTAMP.zip"
     find ${SOURCE_DIR} -name "*.log" -mtime +${DAYS} | zip "$ZIP_FILE" -@    # @ to zip all files found as input to zip
 
