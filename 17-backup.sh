@@ -35,8 +35,10 @@ FILES=$(find ${SOURCE_DIR} -name "*.log" -mtime +${DAYS})
 
 echo "Files: $FILES"
 
-if [ ! -z $FILES ] # z <files> empty, ! z <files> not empty
+if [ -z $FILES ] # z <files> empty, ! z <files> not empty
 then
+    echo "No files older than $DAYS days"
+else
     file_count=$(echo "$FILES" | wc -l)
     echo "$file_count files are older than ${DAYS} days"
     ZIP_FILE="$DEST_DIR/app-logs-$TIMESTAMP.zip"
@@ -55,7 +57,5 @@ then
     else
         echo -e "Zipping the files is $R failed $N"
         exit 1
-    fi
-else
-    echo "No files older than $DAYS days"
+    fi    
 fi
