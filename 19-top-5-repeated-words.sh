@@ -4,6 +4,18 @@
 FILE_NAME=$1
 WORD_COUNT=${2:-5}
 
+USAGE(){
+    echo -e "$R USAGE:: $N sh $0 <file name along with path> <number of top repeated words (optional)>"
+}
+#check the source and destination are provided
+
+if [ $# -lt 1 ]
+then
+    USAGE
+    exit 1
+fi
+
+
 FILE=$(find $FILE_NAME)
 
 
