@@ -31,15 +31,15 @@ then
     echo "$DEST_DIR does not exist...Please check"
 fi
 
-FILES=$(find ${SOURCE_DIR} -name "*.log" -mtime $DAYS)
+FILES=$(find ${SOURCE_DIR} -name "*.log" -mtime +${DAYS})
 
 echo "Files: $FILES"
 
 if [ ! -z $FILES ] # '-z <files>' empty, '! -z <files>' not empty
 then
-    echo "$(echo "$FILES" | wc -l) files are older than +${DAYS}"
+    echo "$(echo "$FILES" | wc -l) files are older than ${DAYS}"
     ZIP_FILE="$DEST_DIR/app-logs-$TIMESTAMP.zip"
-    find ${SOURCE_DIR} -name "*.log" -mtime +14 | zip "$ZIP_FILE" -@    # @ to zip all files found as input to zip
+    find ${SOURCE_DIR} -name "*.log" -mtime +${DAYS} | zip "$ZIP_FILE" -@    # @ to zip all files found as input to zip
 
     #check if zip file is successfully created or not
     if [ -f $ZIP_FILE ]
