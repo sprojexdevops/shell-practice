@@ -37,7 +37,7 @@ FILES=$(find ${SOURCE_DIR} -name "*.log" -mtime +${DAYS})
 
 echo "Files: $FILES"
 
-if [ -z $FILES ] # z <files> empty, ! z <files> not empty
+if [ -z $FILES ]    # true if empty, ! makes it false
 then
     echo "No files older than $DAYS days"
 else
