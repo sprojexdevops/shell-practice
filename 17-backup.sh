@@ -5,10 +5,12 @@ DEST_DIR=$2
 DAYS=${3:-14} #if $3 is empty, default is 14 days.
 TIMESTAMP=$(date +%Y-%m-%d-%H-%M-%S)
 
-R="\e[31m"
-G="\e[32m"
-N="\e[0m"
-Y="\e[33m"
+# colors
+R="\e[31m"      # red
+G="\e[32m"      # green
+Y="\e[33m"      # yellow
+B="\e[34m"
+N="\e[0m"       # normal or no color
 
 USAGE(){
     echo -e "$R USAGE:: $N sh $0 <source> <destination> <days(optional)>"

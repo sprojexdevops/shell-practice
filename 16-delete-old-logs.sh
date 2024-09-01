@@ -1,10 +1,13 @@
 #!/bin/bash
 
 SOURCE_DIR=/home/ec2-user/logs
-R="\e[31m"
-G="\e[32m"
-N="\e[0m"
-Y="\e[33m"
+
+# colors
+R="\e[31m"      # red
+G="\e[32m"      # green
+Y="\e[33m"      # yellow
+B="\e[34m"
+N="\e[0m"       # normal or no color
 
 if [ -d $SOURCE_DIR ]       # '-d <directory-path/variable>' to check if dir exists; '! -d <directory-path/variable>' to check if dir does not exist
 then
