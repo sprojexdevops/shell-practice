@@ -35,7 +35,7 @@ FILES=$(find ${SOURCE_DIR} -name "*.log" -mtime +${DAYS})
 
 echo "Files: $FILES"
 
-if [ ! -z $FILES ] # z <files>' empty, ! z <files> not empty
+if [ ! -z $FILES ] # z <files> empty, ! z <files> not empty
 then
     file_count=$(echo "$FILES" | wc -l)
     echo "$file_count files are older than ${DAYS} days"
