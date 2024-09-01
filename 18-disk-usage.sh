@@ -18,6 +18,6 @@ do
     PARTITION=$(echo $line | awk -F " " '{print $NF}')
     if [ $USAGE -ge $DISK_THRESHOLD ]
     then
-        echo "$PARTITION is $B more than ${DISK_THRESHOLD} $N, current value: $R ${USAGE} $N. Please check"
+        echo -e "$PARTITION is $B more than ${DISK_THRESHOLD} $N, current value: $R ${USAGE} $N. Please check"
     fi
 done <<< $DISK_USAGE
