@@ -47,7 +47,7 @@ else
     #check if zip file is successfully created or not
     if [ -f $ZIP_FILE ]
     then
-        echo "Successfully zippped files older than $DAYS days"
+        echo "$B Successfully zippped $N files older than $DAYS days"
         #remove the files after zipping
         while IFS= read -r file #IFS,internal field seperatpor, empty it will ignore while space.-r is for not to ingore special charecters like /
         do
