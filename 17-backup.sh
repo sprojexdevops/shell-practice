@@ -37,7 +37,7 @@ echo "Files: $FILES"
 
 if [ ! -z $FILES ] # '-z <files>' empty, '! -z <files>' not empty
 then
-    echo "$(echo "$FILES" | wc -l) files are older than ${DAYS}"
+    echo "$(echo "$FILES" | wc -l) files are older than +${DAYS}"
     ZIP_FILE="$DEST_DIR/app-logs-$TIMESTAMP.zip"
     find ${SOURCE_DIR} -name "*.log" -mtime +14 | zip "$ZIP_FILE" -@    # @ to zip all files found as input to zip
 
