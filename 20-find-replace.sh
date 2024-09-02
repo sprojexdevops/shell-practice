@@ -2,8 +2,9 @@
 
 
 DIR=$1
-SEARCH_WORD=$2
-NEW_WORD=$3
+FILE_TYPE=$2
+SEARCH_WORD=$3
+NEW_WORD=$4
 
 # colors
 R="\e[31m"      # red
@@ -13,7 +14,7 @@ B="\e[34m"
 N="\e[0m"       # normal or no color
 
 USAGE(){
-    echo -e "$R USAGE:: $N sh $0 <file-name along with path> <search word> <new word>"
+    echo -e "$R USAGE:: $N sh $0 <Directory path> <search word> <new word>"
 }
 #check the source and destination are provided
 
@@ -27,7 +28,7 @@ fi
 if [ -d $DIR ]
 then
     echo -e "$DIR $G directory exist $N"
-    FILES=$(find $DIR -name "*.txt")
+    FILES=$(find $DIR -name "*.$FILE_TYPE")
     if [ -z $FILES ]
     then
         echo -e "$R No Text files $N found in the directory $DIR"        

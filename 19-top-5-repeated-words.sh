@@ -19,7 +19,7 @@ fi
 FILE=$(find $FILE_NAME)
 
 
-if [ ! -z $FILE ]
+if [ ! -f $FILE ]
 then
     echo "$FILE_NAME exists"
     Freq_Words=$(tr '[:space:]' '[\n*]' < ${FILE_NAME} | tr 'A-Z' 'a-z' | sort | uniq -c | sort -nr | head -$WORD_COUNT)
