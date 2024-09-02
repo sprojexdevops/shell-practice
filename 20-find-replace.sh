@@ -31,9 +31,9 @@ then
     FILES=$(find $DIR -name "*.$FILE_TYPE")
     if [ -z $FILES ]
     then
-        echo -e "$R No Text files $N found in the directory $DIR"        
+        echo -e "'.$FILE_TYPE' files $R not found $N in the directory $DIR"        
     else
-        echo -e "$(echo "$FILES" | wc -l) $G Text files found $N in the directory $DIR :: $FILES"
+        echo -e "$(echo "$FILES" | wc -l) '.$FILE_TYPE' files $G found $N in the directory $DIR :: $FILES"
         while IFS= read -r file #IFS,internal field seperatpor, empty it will ignore while space.-r is for not to ingore special charecters like /
         do
             cat $file | grep -i $SEARCH_WORD &>> /dev/null
