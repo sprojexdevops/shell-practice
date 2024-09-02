@@ -18,7 +18,7 @@ USAGE(){
 }
 #check the source and destination are provided
 
-if [ $# -lt 3 ]
+if [ $# -lt 4 ]
 then
     USAGE
     exit 1
