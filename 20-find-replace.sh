@@ -28,16 +28,16 @@ if [ -d $DIR ]
 then
     echo -e "$DIR $G directory exist $N"
     FILES=$(find $DIR -name "*.txt")
-    if [ -f $FILES ]
+    if [ ! -f $FILES ]
     then
+        echo -e "$R No Text files $N found in the directory $DIR"        
+    else
         echo -e "$(echo "$FILES" | wc -l) $G Text files found $N in the directory $DIR :: $FILES"
         while IFS= read -r file #IFS,internal field seperatpor, empty it will ignore while space.-r is for not to ingore special charecters like /
         do
             echo -e "$Y Finding the word $SEARCH_WORD Replacing it with $NEW_WORD the :$N $file"
             sed -i 's/$SEARCH_WORD/${NEW_WORD}/gi' $file
         done <<< $FILES
-    else
-        echo -e "$R No Text files $N found in the directory $DIR"
     fi
 else
     echo -e "$DIR $R directory does not exist $N"
