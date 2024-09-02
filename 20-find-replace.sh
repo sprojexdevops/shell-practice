@@ -28,7 +28,7 @@ if [ -d $DIR ]
 then
     echo -e "$DIR $G directory exist $N"
     FILES=$(find $DIR -name "*.txt")
-    if [ ! -f $FILES ]
+    if [ ! -f "$FILES" ]
     then
         echo -e "$R No Text files $N found in the directory $DIR"        
     else
