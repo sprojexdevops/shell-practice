@@ -27,7 +27,7 @@ fi
 if [ -d $DIR ]
 then
     echo -e "$DIR $G directory exist $N"
-    $FILES=$(find $DIR -name "*.txt")
+    FILES=$(find $DIR -name "*.txt")
     if [ -z $FILES ]
     then
         echo -e "$(echo "$FILES" | wc -l) $G Text files found $N in the directory $DIR :: $FILES"
