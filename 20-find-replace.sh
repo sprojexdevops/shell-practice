@@ -35,8 +35,13 @@ then
         echo -e "$(echo "$FILES" | wc -l) $G Text files found $N in the directory $DIR :: $FILES"
         while IFS= read -r file #IFS,internal field seperatpor, empty it will ignore while space.-r is for not to ingore special charecters like /
         do
-            echo -e "Finding the word $Y $SEARCH_WORD $N Replacing it with $B $NEW_WORD $N the : $file"
-            sed -i 's/'$SEARCH_WORD'/'${NEW_WORD}'/gi' $file
+            cat $file | grep $SEARCH_WORD
+            if [ $? -eq 0 ]
+            then
+                echo -e "Found the word $Y $SEARCH_WORD $N and Replacing it with $B $NEW_WORD $N in file: $file"
+                sed -i 's/'$SEARCH_WORD'/'${NEW_WORD}'/gi' $file
+            else
+                echo -e "$SEARCH_WORD word $R does not exist $N in file: $file"
         done <<< $FILES
     fi
 else
