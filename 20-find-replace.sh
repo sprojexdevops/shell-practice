@@ -27,10 +27,10 @@ fi
 if [ -d $DIR ]
 then
     echo -e "$DIR $G directory exist $N"
-    $FILE=$(find $DIR/ -name *.txt)
+    $FILE=$(find $DIR -name *.txt)
     if [ -z $FILE ]
     then
-        echo "$(echo $FILE | wc -l) $G Text files found $N in the directory $DIR :: $FILE"
+        echo -e "$(echo $FILE | wc -l) $G Text files found $N in the directory $DIR :: $FILE"
         sed -i 's/'$SEARCH_WORD'/'${NEW_WORD}'/gi' $FILE
     else
         echo -e "$R No Text files $N found in the directory $DIR"
