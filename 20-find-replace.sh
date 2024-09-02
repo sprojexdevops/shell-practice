@@ -27,11 +27,15 @@ fi
 if [ -d $DIR ]
 then
     echo -e "$DIR $G directory exist $N"
-    $FILE=$(find $DIR -name "*.txt")
+    $FILES=$(find $DIR -name "*.txt")
     if [ -z $FILE ]
     then
-        echo -e "$(echo $FILE | wc -l) $G Text files found $N in the directory $DIR :: $FILE"
-        sed -i 's/'$SEARCH_WORD'/'${NEW_WORD}'/gi' $FILE
+        echo -e "$(echo "$FILES" | wc -l) $G Text files found $N in the directory $DIR :: $FILES"
+        while IFS= read -r file #IFS,internal field seperatpor, empty it will ignore while space.-r is for not to ingore special charecters like /
+        do
+            echo -e "$Y Finding the word $SEARCH_WORD Replacing it withNEW_WORD the :$N $file"
+            sed -i 's/'$SEARCH_WORD'/'${NEW_WORD}'/gi' $file
+        done <<< $FILES
     else
         echo -e "$R No Text files $N found in the directory $DIR"
     fi
