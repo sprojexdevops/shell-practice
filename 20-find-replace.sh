@@ -14,7 +14,7 @@ B="\e[34m"
 N="\e[0m"       # normal or no color
 
 USAGE(){
-    echo -e "$R USAGE:: $N sh $0 <Directory path> <search word> <new word>"
+    echo -e "$R USAGE:: $N sh $0 <Directory path> <file type, eg: txt, log... without dot> <search word> <new word>"
 }
 #check the source and destination are provided
 
