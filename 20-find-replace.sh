@@ -41,7 +41,7 @@ then
                 echo -e "Found the word $Y $SEARCH_WORD $N and Replacing it with $B $NEW_WORD $N in file: $file"
                 sed -i 's/'$SEARCH_WORD'/'${NEW_WORD}'/gi' $file
             else
-                echo -e "$SEARCH_WORD word $R does not exist $N in file: $file"
+                echo -e "$Y $SEARCH_WORD $N word $R does not exist $N in file: $file"
             fi
         done <<< $FILES
     fi
