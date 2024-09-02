@@ -28,7 +28,7 @@ if [ -d $DIR ]
 then
     echo -e "$DIR $G directory exist $N"
     FILES=$(find $DIR -name "*.txt")
-    if [ -z $FILES ]
+    if [ -f $FILES ]
     then
         echo -e "$(echo "$FILES" | wc -l) $G Text files found $N in the directory $DIR :: $FILES"
         while IFS= read -r file #IFS,internal field seperatpor, empty it will ignore while space.-r is for not to ingore special charecters like /
