@@ -36,7 +36,7 @@ then
         while IFS= read -r file #IFS,internal field seperatpor, empty it will ignore while space.-r is for not to ingore special charecters like /
         do
             echo -e "Finding the word $Y $SEARCH_WORD $N Replacing it with $B $NEW_WORD $N the : $file"
-            sed -i 's/$SEARCH_WORD/${NEW_WORD}/gi' $file
+            sed -i 's/'$SEARCH_WORD'/'${NEW_WORD}'/gi' $file
         done <<< $FILES
     fi
 else
