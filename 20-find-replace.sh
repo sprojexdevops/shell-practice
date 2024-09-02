@@ -42,6 +42,7 @@ then
                 sed -i 's/'$SEARCH_WORD'/'${NEW_WORD}'/gi' $file
             else
                 echo -e "$SEARCH_WORD word $R does not exist $N in file: $file"
+            fi
         done <<< $FILES
     fi
 else
