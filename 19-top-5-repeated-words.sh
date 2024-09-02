@@ -23,7 +23,7 @@ if [ ! -z $FILE ]
 then
     echo "$FILE_NAME exists"
     Freq_Words=$(tr '[:space:]' '[\n*]' < ${FILE_NAME} | tr 'A-Z' 'a-z' | sort | uniq -c | sort -nr | head -$WORD_COUNT)
-    echo "$Freq_Words"
+    echo "Top $WORD_COUNT repeated words in $FILE_NAME :: $Freq_Words"
 else
     echo "$FILE_NAME does not exist"
 fi
