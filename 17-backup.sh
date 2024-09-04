@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# to run this script as a command,  give execute permission for all --> chmod +x <17-backup.sh> and copy it to /bin/<name for command>
+# to run this script as a command,  give execute permission for all --> chmod +x 17-backup.sh and copy it to /bin/<name for command>
 
 SOURCE_DIR=$1
 DEST_DIR=$2
